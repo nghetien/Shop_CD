@@ -173,7 +173,7 @@
                                                     <button type="reset" class="btn btn-secondary waves-effect waves-light" data-dismiss="modal">
                                                         Hủy
                                                     </button>
-                                                    <button type="submit" class="btn btn-primary waves-effect waves-light mr-1" id="register_button_edit">
+                                                    <button type="submit" class="btn btn-warning waves-effect waves-light mr-1" id="register_button_edit">
                                                         Sửa thông tin
                                                     </button>
                                                 </div>
@@ -211,7 +211,7 @@
                                                 <div class="form-group">
                                                     <input id="table_account_management_search" type="text" placeholder="Search" class="form-control" autocomplete="off">
                                                 </div>
-                                                <div class="form-group mr-2">
+                                                <div class="form-group">
                                                     <button id="modal_create_account" class="btn btn-primary" data-toggle="modal" data-target=".create-new-account">
                                                         <i class="mdi mdi-plus-circle mr-2"></i>
                                                         Thêm mới tài khoản
@@ -310,7 +310,7 @@
     <script src="assets/libs/d3/d3.min.js"></script>
     <script src="assets/libs/bootstrap-select/bootstrap-select.min.js"></script>
     <script src="assets/libs/footable/footable.all.min.js"></script>
-    <!-- <script src="assets/js/pages/foo-tables.init.js"></script> -->
+
     <script src="assets/libs/parsleyjs/parsley.min.js"></script>
     <script src="assets/js/pages/form-validation.init.js"></script>
     <script src="assets/libs/sweetalert2/sweetalert2.min.js"></script>
