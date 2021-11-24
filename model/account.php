@@ -41,6 +41,7 @@
                 $result = DB::getARecord($query);
                 if(isset($result)){
                     $_SESSION['full_name'] = $result->full_name;
+                    $_SESSION['id_user'] = $result->id_user;
                     $_SESSION['email'] = $email;
                     $_SESSION['role'] = $result->id_role;
                     $_SESSION['user_token'] = md5($email.$_SESSION['role'].$password);

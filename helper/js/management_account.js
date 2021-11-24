@@ -32,33 +32,45 @@ $(document).ready(function () {
             });
         })
         .on("click", "[name='button_delete_item']", function (event) {
-            $.ajax({
-                type: "DELETE",
-                url: `index.php?controller=management_account`,
-                data: {
-                    id_user: event.target.getAttribute("id_user"),
-                },
-                success: function (data) {
-                    let dataJson = JSON.parse(data);
-                    if (dataJson.status == "200") {
-                        Swal.fire({
-                            title: "Thành công!",
-                            text: "Xóa tài khoản thành công!",
-                            type: "success",
-                            confirmButtonClass: "btn btn-confirm mt-2",
-                        }).then(function (result) {
-                            if (result.value) {
-                                reloadTable();
+            Swal.fire({
+                title: "Thông báo?",
+                text: "Bạn có chắc xóa tài khoản này không!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "OK!"
+            }).then(function (result) {
+                if (result.value) {
+                    $.ajax({
+                        type: "DELETE",
+                        url: `index.php?controller=management_account`,
+                        data: {
+                            id_user: event.target.getAttribute("id_user"),
+                        },
+                        success: function (data) {
+                            let dataJson = JSON.parse(data);
+                            if (dataJson.status == "200") {
+                                Swal.fire({
+                                    title: "Thành công!",
+                                    text: "Xóa tài khoản thành công!",
+                                    type: "success",
+                                    confirmButtonClass: "btn btn-confirm mt-2",
+                                }).then(function (result) {
+                                    if (result.value) {
+                                        reloadTable();
+                                    }
+                                });
+                            } else {
+                                Swal.fire({
+                                    title: "Thất bại",
+                                    text: dataJson.message,
+                                    type: "error",
+                                });
                             }
-                        });
-                    } else {
-                        Swal.fire({
-                            title: "Thất bại",
-                            text: dataJson.message,
-                            type: "error",
-                        });
-                    }
-                },
+                        },
+                    });
+                }
             });
         })
     $("#table_account_management_search").on("input", function (o) {
@@ -168,8 +180,6 @@ $(document).ready(function () {
     });
 
     $("#form_edit_account").submit(function (event) {
-        console.log(event.target);
-        console.log($("#createAccount").attr("id_user"));
         event.preventDefault();
         $.ajax({
             type: "PUT",

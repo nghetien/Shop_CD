@@ -9,21 +9,8 @@
 
                 <li class="menu-title">Quản lý Admin</li>
 
-                <!-- <li>
-                    <a href="javascript: void(0);">
-                        <i class="fe-mail"></i>
-                        <span> Email </span>
-                        <span class="menu-arrow"></span>
-                    </a>
-                    <ul class="nav-second-level" aria-expanded="false">
-                        <li><a href="email-inbox.html">Inbox</a></li>
-                        <li><a href="email-read.html">Read Email</a></li>
-                        <li><a href="email-compose.html">Compose Email</a></li>
-                    </ul>
-                </li> -->
-
                 <li>
-                    <a href="management_order_detail">
+                    <a href="management_order">
                         <i class="fe-clipboard"></i>
                         <span> Quản lý đơn hàng </span>
                     </a>
@@ -35,13 +22,6 @@
                         <span> Quản lý tài khoản </span>
                     </a>
                 </li>
-
-                <!-- <li>
-                    <a href="taskboard.html">
-                        <i class="fe-file-text"></i>
-                        <span> Task Board </span>
-                    </a>
-                </li> -->
 
                 <li>
                     <a href="management_product">
